@@ -1,0 +1,14 @@
+<h1>Your Generated Copies</h1>
+
+<%= link_to 'Create New Copy', new_copy_path %>
+
+<ul>
+<% @copies.each do |copy| %>
+  <li>
+    <strong>Business Name:</strong> <%= copy.business_name %><br>
+    <strong>Industry:</strong> <%= copy.industry %><br>
+    <strong>Target Market:</strong> <%= copy.target_market %><br>
+    <strong>Generated Content:</strong> <%= copy.content %><br>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,22 @@
+<h1>Create a New Copy</h1>
+
+<%= form_for @copy do |f| %>
+  <div>
+    <%= f.label :business_name %>
+    <%= f.text_field :business_name %>
+  </div>
+
+  <div>
+    <%= f.label :industry %>
+    <%= f.text_field :industry %>
+  </div>
+
+  <div>
+    <%= f.label :target_market %>
+    <%= f.text_field :target_market %>
+  </div>
+
+  <div>
+    <%= f.submit "Generate Copy" %>
+  </div>
+<% end %>
