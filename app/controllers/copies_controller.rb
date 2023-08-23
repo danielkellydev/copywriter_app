@@ -10,15 +10,26 @@ class CopiesController < ApplicationController
     def create
       @copy = current_user.copies.new(copy_params)
       
-      prompt = "Create a copy for a business named #{@copy.business_name}, in the #{@copy.industry} industry targeting #{@copy.target_market}."
-      client = OpenAI::Client.new(access_token: "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")
-      response = client.completions.create(
-        prompt: prompt,
-        max_tokens: 150,
-        model: "davinci"
-        )
-      @copy.content = response.choices.first.text.strip
-  
+      # prompt = "Create a copy for a business named #{@copy.business_name}, in the #{@copy.industry} industry targeting #{@copy.target_market}."
+      
+      prompt = "You are a copywriter for a marketing agency. Write a website copy paragraph for a business named #{@copy.business_name} in the #{@copy.industry} industry. They target #{@copy.target_market}. 
+      - Location of Use: #{@copy.copy_location}
+      - Purpose: #{@copy.copy_purpose}
+      - Desired Tone: #{@copy.copy_tone}
+      Ensure the copy is clear, concise, and reflects the provided details."
+      
+      client = OpenAI::Client.new
+      response = client.completions(
+        parameters: {
+          prompt: prompt,
+          max_tokens: 50,
+          model: 'curie',
+          temperature: 0.2,
+      })
+      puts response
+
+      @copy.content = response['choices'][0]['text']
+
       if @copy.save
         redirect_to copies_path, notice: 'Copy created successfully!'
       else
@@ -34,6 +45,6 @@ class CopiesController < ApplicationController
     private
   
     def copy_params
-      params.require(:copy).permit(:business_name, :industry, :target_market)
+      params.require(:copy).permit(:business_name, :industry, :target_market, :copy_location, :copy_purpose, :copy_tone)
     end
 end

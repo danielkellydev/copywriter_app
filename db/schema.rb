@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_22_061849) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_23_011252) do
   create_table "copies", force: :cascade do |t|
     t.string "business_name"
     t.string "industry"
@@ -19,6 +19,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_061849) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "copy_location"
+    t.string "copy_purpose"
+    t.string "copy_tone"
     t.index ["user_id"], name: "index_copies_on_user_id"
   end
 

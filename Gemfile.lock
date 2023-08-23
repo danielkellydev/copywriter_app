@@ -94,6 +94,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     faraday (2.7.10)
       faraday-net_http (>= 2.0, < 3.1)
@@ -239,11 +243,12 @@ DEPENDENCIES
   capybara
   debug
   devise
+  dotenv-rails
   importmap-rails
   jbuilder
   puma (~> 5.0)
   rails (~> 7.0.7)
-  ruby-openai
+  ruby-openai (~> 5.1.0)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
