@@ -2,7 +2,9 @@
   <div class="relative py-3 sm:max-w-xl sm:mx-auto">
     <h1 class="text-5xl font-bold text-center mb-8 text-gray-800">Your Copies</h1>
     
-    <%= link_to 'Create New Copy', new_copy_path, class: "mb-5 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+    <div class="flex justify-center mb-5">
+      <%= link_to 'Create New Copy', new_copy_path, class: "inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+    </div>
 
     <div class="bg-white px-10 py-5 rounded shadow-xl">
       <ul class="space-y-6">
