@@ -22,12 +22,10 @@ class CopiesController < ApplicationController
       response = client.completions(
         parameters: {
           prompt: prompt,
-          max_tokens: 50,
-          model: 'curie',
-          temperature: 0.2,
+          max_tokens: 80,
+          model: 'text-davinci-001',
+          temperature: 0.5
       })
-      puts response
-
       @copy.content = response['choices'][0]['text']
 
       if @copy.save

@@ -2597,3 +2597,1066 @@ Processing by CopiesController#index as TURBO_STREAM
 Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 5679)
 
 
+Started GET "/" for 127.0.0.1 at 2023-08-23 11:58:28 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 26.9ms | Allocations: 9179)
+  Rendered layout layouts/application.html.erb (Duration: 149.1ms | Allocations: 42486)
+Completed 200 OK in 213ms (Views: 154.3ms | ActiveRecord: 1.9ms | Allocations: 58383)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 11:58:32 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2912)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 5020)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.1ms | Allocations: 6781)
+
+
+Started POST "/copies" for 127.0.0.1 at 2023-08-23 11:58:42 +1000
+Processing by CopiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "copy"=>{"business_name"=>"Tiger Therapies", "industry"=>"Herbal medicine", "target_market"=>"Men in their 40s", "copy_location"=>"To be used in Instagram and the front page of my website", "copy_purpose"=>"To engage new customers and get them to book", "copy_tone"=>"Exciting"}, "commit"=>"Generate Copy"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("business_name", "industry", "target_market", "content", "user_id", "created_at", "updated_at", "copy_location", "copy_purpose", "copy_tone") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["business_name", "Tiger Therapies"], ["industry", "Herbal medicine"], ["target_market", "Men in their 40s"], ["content", "\n\nLooking for a way to improve your health and vitality? Look no further than Tiger Therapies! Our unique herbal medicine treatments are perfect for men in their 40s. Our experienced therapists will help you feel your best again."], ["user_id", 1], ["created_at", "2023-08-23 01:58:43.564312"], ["updated_at", "2023-08-23 01:58:43.564312"], ["copy_location", "To be used in Instagram and the front page of my website"], ["copy_purpose", "To engage new customers and get them to book"], ["copy_tone", "Exciting"]]
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+Redirected to http://127.0.0.1:3000/copies
+Completed 302 Found in 1013ms (ActiveRecord: 12.6ms | Allocations: 7398)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 11:58:43 +1000
+Processing by CopiesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 998)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3104)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 4814)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:00:47 +1000
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:00:47 +1000
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:00:47 +1000
+Processing by CopiesController#new as HTML
+Processing by CopiesController#new as HTML
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1706)
+  Rendered copies/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1640)
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2707)
+  Rendered layout layouts/application.html.erb (Duration: 50.6ms | Allocations: 33306)
+Completed 200 OK in 78ms (Views: 54.8ms | ActiveRecord: 0.4ms | Allocations: 46603)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 36053)
+Completed 200 OK in 82ms (Views: 59.1ms | ActiveRecord: 1.2ms | Allocations: 49365)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 55.6ms | Allocations: 37066)
+Completed 200 OK in 84ms (Views: 60.2ms | ActiveRecord: 0.4ms | Allocations: 51538)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:00:52 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 9211)
+  Rendered layout layouts/application.html.erb (Duration: 87.3ms | Allocations: 42252)
+Completed 200 OK in 125ms (Views: 89.8ms | ActiveRecord: 1.1ms | Allocations: 58143)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:00:54 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2912)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 5020)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 6769)
+
+
+Started POST "/copies" for 127.0.0.1 at 2023-08-23 12:02:03 +1000
+Processing by CopiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "copy"=>{"business_name"=>"Bright Nails", "industry"=>"Beauty", "target_market"=>"Women between 20-50 years of age", "copy_location"=>"Front page of website, facebook page", "copy_purpose"=>"To get women excited about getting their nails done", "copy_tone"=>"Engaging, youthful, exciting"}, "commit"=>"Generate Copy"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+  [1m[36mCopy Create (0.8ms)[0m  [1m[32mINSERT INTO "copies" ("business_name", "industry", "target_market", "content", "user_id", "created_at", "updated_at", "copy_location", "copy_purpose", "copy_tone") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["business_name", "Bright Nails"], ["industry", "Beauty"], ["target_market", "Women between 20-50 years of age"], ["content", "\n\nLooking for a new and exciting way to get your nails done? Look no further than Bright Nails! Our talented staff provides top-notch services that will leave you feeling refreshed and beautiful. We cater to women between the ages of 20"], ["user_id", 1], ["created_at", "2023-08-23 02:02:04.080464"], ["updated_at", "2023-08-23 02:02:04.080464"], ["copy_location", "Front page of website, facebook page"], ["copy_purpose", "To get women excited about getting their nails done"], ["copy_tone", "Engaging, youthful, exciting"]]
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+Redirected to http://127.0.0.1:3000/copies
+Completed 302 Found in 897ms (ActiveRecord: 16.0ms | Allocations: 7459)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:02:04 +1000
+Processing by CopiesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1030)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3136)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 4840)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:02:31 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1705)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 14430)
+Completed 200 OK in 34ms (Views: 17.9ms | ActiveRecord: 2.0ms | Allocations: 23159)
+
+
+Started POST "/copies" for 127.0.0.1 at 2023-08-23 12:02:43 +1000
+Processing by CopiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "copy"=>{"business_name"=>"Bright Nails", "industry"=>"Beauty", "target_market"=>"Women between 20-50 years of age", "copy_location"=>"Front page of website, facebook page", "copy_purpose"=>"To get women excited about getting their nails done", "copy_tone"=>"Engaging, youthful, exciting"}, "commit"=>"Generate Copy"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+  [1m[36mCopy Create (0.2ms)[0m  [1m[32mINSERT INTO "copies" ("business_name", "industry", "target_market", "content", "user_id", "created_at", "updated_at", "copy_location", "copy_purpose", "copy_tone") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["business_name", "Bright Nails"], ["industry", "Beauty"], ["target_market", "Women between 20-50 years of age"], ["content", "\n\nBright Nails is the place to go for the latest and trendiest nail designs. We offer a variety of services that will leave you feeling beautiful and confident. Our team of experts are passionate about nails and are dedicated to providing you with the best possible experience. Come see us today and let us help you achieve the perfect nails!"], ["user_id", 1], ["created_at", "2023-08-23 02:02:45.067140"], ["updated_at", "2023-08-23 02:02:45.067140"], ["copy_location", "Front page of website, facebook page"], ["copy_purpose", "To get women excited about getting their nails done"], ["copy_tone", "Engaging, youthful, exciting"]]
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+Redirected to http://127.0.0.1:3000/copies
+Completed 302 Found in 1117ms (ActiveRecord: 13.2ms | Allocations: 6460)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:02:45 +1000
+Processing by CopiesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1959)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4099)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 5760)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:04:58 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1997)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4374)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 6591)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:05:21 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1416)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3796)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.5ms | Allocations: 6022)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:05:48 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1413)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 3793)
+Completed 200 OK in 20ms (Views: 12.7ms | ActiveRecord: 0.4ms | Allocations: 6031)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:10:16 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 9389)
+  Rendered layout layouts/application.html.erb (Duration: 407.3ms | Allocations: 151530)
+Completed 200 OK in 455ms (Views: 410.7ms | ActiveRecord: 1.6ms | Allocations: 167441)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:10:41 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (1.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1120)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 8800)
+Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 1.2ms | Allocations: 10465)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:11:37 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.5ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1419)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 9404)
+Completed 200 OK in 40ms (Views: 30.4ms | ActiveRecord: 0.6ms | Allocations: 11687)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:11:40 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (1.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  Rendered copies/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1120)
+  Rendered layout layouts/application.html.erb (Duration: 56.4ms | Allocations: 8975)
+Completed 200 OK in 66ms (Views: 55.7ms | ActiveRecord: 1.6ms | Allocations: 10643)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:13:15 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1444)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 9550)
+Completed 200 OK in 30ms (Views: 24.0ms | ActiveRecord: 0.3ms | Allocations: 11788)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:13:16 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 8812)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 10472)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:13:45 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1428)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 9412)
+Completed 200 OK in 32ms (Views: 28.5ms | ActiveRecord: 0.3ms | Allocations: 11637)
+
+
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.7ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:18:04 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 9384)
+  Rendered layout layouts/application.html.erb (Duration: 140.4ms | Allocations: 59486)
+Completed 200 OK in 207ms (Views: 144.0ms | ActiveRecord: 2.3ms | Allocations: 75365)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:18:05 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1108)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 8872)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.3ms | Allocations: 10555)
+
+
+  [1m[36mCopy Load (0.6ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 8], ["id", 9], ["id", 10], ["id", 11], ["id", 12]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.2ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.2ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.3ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.2ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.3ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.2ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.3ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.2ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.3ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.3ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCopy Destroy (0.2ms)[0m  [1m[31mDELETE FROM "copies" WHERE "copies"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:19:48 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 743)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 8424)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.4ms | Allocations: 10090)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:23:00 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 11489)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 19170)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.1ms | Allocations: 20899)
+
+
+Started POST "/copies" for 127.0.0.1 at 2023-08-23 12:24:39 +1000
+Processing by CopiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "copy"=>{"business_name"=>"Herbal Health", "industry"=>"Herbal medicine", "target_market"=>"Men in their 30s with low energy, inability to focus", "copy_location"=>"Website front page", "copy_purpose"=>"Engage new customers, increase bookings", "copy_tone"=>"Engaging, youthful, exciting"}, "commit"=>"Generate Copy"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("business_name", "industry", "target_market", "content", "user_id", "created_at", "updated_at", "copy_location", "copy_purpose", "copy_tone") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["business_name", "Herbal Health"], ["industry", "Herbal medicine"], ["target_market", "Men in their 30s with low energy, inability to focus"], ["content", "\n\nLooking to increase your energy and focus? Herbal Health can help! We offer herbal remedies specifically tailored to men in their 30s. Our treatments are safe, natural, and effective. Book your appointment today!"], ["user_id", 1], ["created_at", "2023-08-23 02:24:39.881856"], ["updated_at", "2023-08-23 02:24:39.881856"], ["copy_location", "Website front page"], ["copy_purpose", "Engage new customers, increase bookings"], ["copy_tone", "Engaging, youthful, exciting"]]
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/copies_controller.rb:31:in `create'
+Redirected to http://127.0.0.1:3000/copies
+Completed 302 Found in 862ms (ActiveRecord: 14.2ms | Allocations: 7443)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:24:39 +1000
+Processing by CopiesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 8641)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 10361)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:29:06 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 5004)
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 26872)
+Completed 200 OK in 72ms (Views: 52.7ms | ActiveRecord: 2.0ms | Allocations: 33372)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:29:09 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 8464)
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 0.3ms | Allocations: 10143)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:29:10 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 8714)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.5ms | Allocations: 10365)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:29:13 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1653)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 9537)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.2ms | Allocations: 11191)
+
+
+Started GET "/copies" for 127.0.0.1 at 2023-08-23 12:30:06 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1085)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 9069)
+Completed 200 OK in 26ms (Views: 20.0ms | ActiveRecord: 0.3ms | Allocations: 11300)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:31:30 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 9056)
+  Rendered layout layouts/application.html.erb (Duration: 166.9ms | Allocations: 59838)
+Completed 200 OK in 226ms (Views: 171.8ms | ActiveRecord: 2.7ms | Allocations: 75703)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:33:30 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 11720)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 19707)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.1ms | Allocations: 21972)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:33:32 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 9391)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.1ms | Allocations: 11033)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:33:32 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 9391)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.3ms | Allocations: 11015)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:33:33 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 9391)
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 0.5ms | Allocations: 11058)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:33:33 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 9413)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.1ms | Allocations: 11026)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:33:50 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 9060)
+  Rendered layout layouts/application.html.erb (Duration: 122.2ms | Allocations: 59407)
+Completed 200 OK in 160ms (Views: 125.6ms | ActiveRecord: 1.1ms | Allocations: 75268)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:33:52 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3120)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 10884)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.1ms | Allocations: 12630)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:34:56 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 13843)
+Completed 200 OK in 48ms (Views: 40.6ms | ActiveRecord: 0.3ms | Allocations: 15492)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:34:59 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 8467)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 0.3ms | Allocations: 10134)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:35:00 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 8466)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.2ms | Allocations: 10125)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:39:20 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1156)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 9458)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.3ms | Allocations: 11690)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-08-23 12:39:23 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-08-23 12:46:23 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:46:36 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.5ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  Rendered copies/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 9136)
+  Rendered layout layouts/application.html.erb (Duration: 152.8ms | Allocations: 66845)
+Completed 200 OK in 192ms (Views: 154.5ms | ActiveRecord: 2.4ms | Allocations: 82751)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-08-23 12:46:40 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:48:06 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1204)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 9462)
+Completed 200 OK in 29ms (Views: 22.8ms | ActiveRecord: 0.3ms | Allocations: 11715)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:48:08 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 8526)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 0.3ms | Allocations: 10234)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:48:11 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 11581)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 19263)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.1ms | Allocations: 21004)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:48:18 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 9392)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.1ms | Allocations: 11041)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-08-23 12:48:19 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:48:20 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 8796)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 10458)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:48:24 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1198)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 9185)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.2ms | Allocations: 11405)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:48:25 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 8526)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.2ms | Allocations: 10181)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:51:02 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1390)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 9458)
+Completed 200 OK in 27ms (Views: 19.9ms | ActiveRecord: 0.3ms | Allocations: 11699)
+
+
+Started GET "/copies/13" for 127.0.0.1 at 2023-08-23 12:51:13 +1000
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for CopiesController):
+  
+actionpack (7.0.7) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.7) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.7) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.7) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.7) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.7) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.7) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.7) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.7) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.7) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.7) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.7) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.7) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.7) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.7) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.7) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.7) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.7) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.7) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.7) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:51:17 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 989)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 8942)
+Completed 200 OK in 22ms (Views: 18.5ms | ActiveRecord: 0.3ms | Allocations: 10599)
+
+
+Started GET "/copies/14" for 127.0.0.1 at 2023-08-23 12:51:18 +1000
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for CopiesController):
+  
+actionpack (7.0.7) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.7) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.7) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.7) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.7) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.7) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.7) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.7) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.7) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.7) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.7) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.7) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.7) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.7) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.7) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.7) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.7) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.7) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.7) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.7) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.7) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:51:19 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 989)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 8942)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.3ms | Allocations: 10589)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:51:29 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1198)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 9184)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 0.3ms | Allocations: 11444)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 12:51:43 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2184)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 9866)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.1ms | Allocations: 11577)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 12:57:46 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 9114)
+Completed 200 OK in 40ms (Views: 25.2ms | ActiveRecord: 1.4ms | Allocations: 11505)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:00:07 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 63.5ms | Allocations: 9768)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 0.3ms | Allocations: 11440)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/tailwindcss/utilities"):
+  
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:00:12 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 8670)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.2ms | Allocations: 10338)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/tailwindcss/components"):
+  
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:00:24 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.7ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 10609)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 0.9ms | Allocations: 12254)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:06:54 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 23.2ms | Allocations: 9059)
+  Rendered layout layouts/application.html.erb (Duration: 163.3ms | Allocations: 67204)
+Completed 200 OK in 215ms (Views: 165.8ms | ActiveRecord: 2.9ms | Allocations: 83090)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 13:07:06 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3119)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 10868)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.2ms | Allocations: 12599)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:07:30 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 18.0ms | Allocations: 9060)
+  Rendered layout layouts/application.html.erb (Duration: 114.5ms | Allocations: 59366)
+Completed 200 OK in 151ms (Views: 116.1ms | ActiveRecord: 2.7ms | Allocations: 75245)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 13:07:47 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3120)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 10882)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.1ms | Allocations: 12625)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:08:33 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1080)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 9063)
+Completed 200 OK in 25ms (Views: 18.7ms | ActiveRecord: 0.4ms | Allocations: 11322)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:08:34 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 8463)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 10126)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:08:34 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 8462)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 10109)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:08:34 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 8506)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.3ms | Allocations: 10166)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-23 13:08:34 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:9
+  Rendered copies/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 8501)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.3ms | Allocations: 10149)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2023-08-23 13:09:02 +1000
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2205)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 10183)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.1ms | Allocations: 12384)
+
+

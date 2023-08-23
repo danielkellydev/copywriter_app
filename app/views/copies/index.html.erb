@@ -1,14 +1,25 @@
-<h1>Your Generated Copies</h1>
+<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+    <h1 class="text-5xl font-bold text-center mb-8 text-gray-800">Your Copies</h1>
+    
+    <%= link_to 'Create New Copy', new_copy_path, class: "mb-5 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
 
-<%= link_to 'Create New Copy', new_copy_path %>
-
-<ul>
-<% @copies.each do |copy| %>
-  <li>
-    <strong>Business Name:</strong> <%= copy.business_name %><br>
-    <strong>Industry:</strong> <%= copy.industry %><br>
-    <strong>Target Market:</strong> <%= copy.target_market %><br>
-    <strong>Generated Content:</strong> <%= copy.content %><br>
-  </li>
-<% end %>
-</ul>
+    <div class="bg-white px-10 py-5 rounded shadow-xl">
+      <ul class="space-y-6">
+      <% @copies.each do |copy| %>
+        <li class="border-b border-gray-200 pb-6">
+          <div class="flex justify-between items-baseline mb-2">
+            <h2 class="text-2xl font-semibold text-gray-800"><%= copy.business_name %></h2>
+          </div>
+          <p><strong>Industry:</strong> <%= copy.industry %></p>
+          <p><strong>Target Market:</strong> <%= copy.target_market %></p>
+          <p><strong>Copy Location:</strong> <%= copy.copy_location %></p>
+          <p><strong>Copy Purpose:</strong> <%= copy.copy_purpose %></p>
+          <p><strong>Copy Tone:</strong> <%= copy.copy_tone %></p>
+          <p class="mt-3 text-blue-600"><strong>Generated Content:</strong> <%= copy.content %></p>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

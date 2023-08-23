@@ -1,37 +1,43 @@
-<h1>Create a New Copy</h1>
+<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+    <h1 class="text-5xl font-bold text-center mb-8 text-gray-800">Create a New Copy</h1>
+    
+    <%= form_for @copy, html: { class: "bg-white p-6 rounded shadow-xl" } do |f| %>
+      
+      <div class="mb-4">
+        <%= f.label :business_name, class: "block text-sm font-medium text-gray-600" %>
+        <%= f.text_field :business_name, class: "mt-1 p-2 w-full border rounded-md" %>
+      </div>
 
-<%= form_for @copy do |f| %>
-  <div>
-    <%= f.label :business_name %>
-    <%= f.text_field :business_name %>
-  </div>
+      <div class="mb-4">
+        <%= f.label :industry, class: "block text-sm font-medium text-gray-600" %>
+        <%= f.text_field :industry, class: "mt-1 p-2 w-full border rounded-md" %>
+      </div>
 
-  <div>
-    <%= f.label :industry %>
-    <%= f.text_field :industry %>
-  </div>
+      <div class="mb-4">
+        <%= f.label :target_market, class: "block text-sm font-medium text-gray-600" %>
+        <%= f.text_field :target_market, class: "mt-1 p-2 w-full border rounded-md" %>
+      </div>
 
-  <div>
-    <%= f.label :target_market %>
-    <%= f.text_field :target_market %>
-  </div>
+      <div class="mb-4">
+        <%= f.label :copy_location, class: "block text-sm font-medium text-gray-600" %>
+        <%= f.text_field :copy_location, class: "mt-1 p-2 w-full border rounded-md" %>
+      </div>
 
-  <div>
-  <%= f.label :copy_location %>
-  <%= f.text_field :copy_location %>
-  </div>
+      <div class="mb-4">
+        <%= f.label :copy_purpose, class: "block text-sm font-medium text-gray-600" %>
+        <%= f.text_field :copy_purpose, class: "mt-1 p-2 w-full border rounded-md" %>
+      </div>
 
-  <div>
-  <%= f.label :copy_purpose %>
-  <%= f.text_field :copy_purpose %>
-  </div>
+      <div class="mb-4">
+        <%= f.label :copy_tone, class: "block text-sm font-medium text-gray-600" %>
+        <%= f.text_field :copy_tone, class: "mt-1 p-2 w-full border rounded-md" %>
+      </div>
 
-  <div>
-  <%= f.label :copy_tone %>
-  <%= f.text_field :copy_tone %>
-  </div>
+      <div class="mt-6">
+        <%= f.submit "Generate Copy", class: "w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+      </div>
 
-  <div>
-    <%= f.submit "Generate Copy" %>
+    <% end %>
   </div>
-<% end %>
+</div>

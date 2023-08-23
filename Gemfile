@@ -12,6 +12,8 @@ gem "sprockets-rails"
 gem 'ruby-openai', '~> 5.1.0'
 gem 'devise' # for user authentication
 
+gem 'tailwindcss-rails' # for styling
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 # Use sqlite3 as the database for Active Record
