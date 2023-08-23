@@ -1,8 +1,8 @@
-<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
-    <h1 class="text-5xl font-bold text-center mb-8 text-gray-800">Create a New Copy</h1>
+<div class="min-h-screen bg-gray-100 py-6 px-4 rounded-md flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-xl sm:mx-auto px-4">
+    <h1 class="text-5xl font-semibold text-center mb-8 text-gray-800">Create a New Copy</h1>
     
-    <%= form_for @copy, html: { class: "bg-white p-6 rounded shadow-xl" } do |f| %>
+    <%= form_for @copy, html: { class: "bg-white p-6 rounded-md shadow-xl" } do |f| %>
       
       <div class="mb-4">
         <%= f.label :business_name, class: "block text-sm font-medium text-gray-600" %>

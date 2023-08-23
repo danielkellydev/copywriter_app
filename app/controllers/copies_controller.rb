@@ -22,7 +22,7 @@ class CopiesController < ApplicationController
       response = client.completions(
         parameters: {
           prompt: prompt,
-          max_tokens: 80,
+          max_tokens: 100,
           model: 'text-davinci-001',
           temperature: 0.5
       })
