@@ -18,3 +18,4 @@ This is a simple copywriter app. A user is able to create an account with their 
 - When a copy is deleted, there is no prompt to confirm the deletion.
 - Forgotten Password functionality is not yet set up. 
 - Testing suites could be expanded to cover more edge cases.
+- Error handling 

@@ -10994,3 +10994,23 @@ Processing by Devise::SessionsController#new as TURBO_STREAM
 Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 5652)
 
 
+Started GET "/" for 127.0.0.1 at 2023-08-24 15:15:51 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/danielkellydev/ruby-projects/copywriter_app/app/controllers/copies_controller.rb:23: Invalid return in class/module body
+        render :new and return
+                        ^~~~~~
+/home/danielkellydev/ruby-projects/copywriter_app/app/controllers/copies_controller.rb:28: Invalid return in class/module body
+      render :new and return
+                      ^~~~~~
+/home/danielkellydev/ruby-projects/copywriter_app/app/controllers/copies_controller.rb:61: syntax error, unexpected `end'):
+  
+app/controllers/copies_controller.rb:23: Invalid return in class/module body
+app/controllers/copies_controller.rb:28: Invalid return in class/module body
+app/controllers/copies_controller.rb:61: syntax error, unexpected `end'
+app/controllers/copies_controller.rb:23: Invalid return in class/module body
+app/controllers/copies_controller.rb:28: Invalid return in class/module body
+app/controllers/copies_controller.rb:61: syntax error, unexpected `end'
+app/controllers/copies_controller.rb:23: Invalid return in class/module body
+app/controllers/copies_controller.rb:28: Invalid return in class/module body
+app/controllers/copies_controller.rb:61: syntax error, unexpected `end'
