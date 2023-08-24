@@ -42,14 +42,14 @@ config.action_mailer.raise_delivery_errors = true
 config.action_mailer.default_options = {from: 'danielkellydev@gmail.com'}
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
-config.action_mailer.perform_caching = false
-address:              'smtp.gmail.com',
-port:                 587,
-domain:               'gmail.com',
-user_name:            ENV.fetch('EMAIL'),
-password:             ENV.fetch('EMAIL_PASSWORD'),
-authentication:       'plain',
-enable_starttls_auto: true  }
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'gmail.com',
+  user_name:            ENV.fetch('EMAIL'),
+  password:             ENV.fetch('EMAIL_PASSWORD'),
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+  config.action_mailer.perform_caching = false
 config.action_mailer.default_url_options = {:host =>'localhost:3000'}
 
 
