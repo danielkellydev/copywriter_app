@@ -10729,3 +10729,15 @@ Processing by CopiesController#index as HTML
 Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.7ms | Allocations: 3588)
 
 
+Started GET "/copies" for 127.0.0.1 at 2023-08-24 12:50:58 +1000
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "copies" WHERE "copies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  Rendered copies/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 763)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 1881)
+Completed 200 OK in 46ms (Views: 6.5ms | ActiveRecord: 8.5ms | Allocations: 6532)
+
+
