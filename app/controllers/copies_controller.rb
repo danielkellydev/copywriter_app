@@ -40,9 +40,22 @@ class CopiesController < ApplicationController
       @copies = current_user.copies
     end
   
+    def destroy
+      @copy = Copy.find(params[:id])
+      @copy.destroy
+      redirect_to copies_path, notice: 'Copy deleted successfully!'
+    end
+
+    def show 
+      @copy = Copy.find(params[:id])
+      @copy.destroy
+      redirect_to copies_path, notice: 'Copy deleted successfully!'
+    end
+
     private
   
     def copy_params
       params.require(:copy).permit(:business_name, :industry, :target_market, :copy_location, :copy_purpose, :copy_tone)
     end
+
 end

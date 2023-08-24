@@ -14,6 +14,8 @@ gem 'devise' # for user authentication
 
 gem 'tailwindcss-rails' # for styling
 
+gem 'jquery-rails' # for javascript
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 # Use sqlite3 as the database for Active Record

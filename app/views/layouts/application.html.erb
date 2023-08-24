@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>CopywriterApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+</head>
+<body>
+<nav class="bg-gray-800 flex py-2 px-4 space-x-4">
+    <% if user_signed_in? %>
+    <div class="inline-flex"> <!-- Change here -->
+        <%= button_to(
+            "Log Out",
+            destroy_user_session_path,
+            method: :delete,
+            class: "bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        ) %>
+    </div>
+    <% end %>
 
-  </head>
-
-<nav class="bg-gray-800 flex py-2 px-4">
-<% if user_signed_in? %>
-  <%= button_to(
-    "Log Out",
-    destroy_user_session_path,
-    method: :delete,
-    class: "bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-  ) %>
-<% end %>
-
-<% unless current_page?(root_path) %>
-  <%= link_to "Home", root_path, class: "inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
-<% end %>
-
+    <% unless current_page?(root_path) || current_page?(new_user_session_path) %>
+    <div class="inline-flex"> <!-- Change here -->
+        <%= link_to "Home", root_path, class: "bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    </div>
+    <% end %>
 </nav>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 py-5 flex justify-center">
-      <%= yield %>
-    </main>
-  </body>
+<main class="container mx-auto mt-28 px-5 py-5 flex justify-center">
+    <%= yield %>
+</main>
+</body>
 </html>
