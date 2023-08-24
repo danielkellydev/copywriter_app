@@ -10958,3 +10958,39 @@ Processing by CopiesController#index as HTML
 Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 1.4ms | Allocations: 3518)
 
 
+Started GET "/" for 127.0.0.1 at 2023-08-24 15:09:08 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "copies" WHERE "copies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  Rendered copies/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 2699)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | Allocations: 6005)
+Completed 200 OK in 129ms (Views: 48.8ms | ActiveRecord: 12.5ms | Allocations: 22019)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-08-24 15:09:11 +1000
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 7ms (ActiveRecord: 0.5ms | Allocations: 3228)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-24 15:09:11 +1000
+Processing by CopiesController#index as TURBO_STREAM
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-08-24 15:09:11 +1000
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 720)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3349)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4332)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 5652)
+
+
