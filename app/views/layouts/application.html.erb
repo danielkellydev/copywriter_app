@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 </head>
-<body>
+<body class= "bg-blue-700">
 <nav class="bg-gray-800 flex py-2 px-4 space-x-4">
     <% if user_signed_in? %>
     <div class="inline-flex"> <!-- Change here -->
@@ -29,7 +29,7 @@
     <% end %>
 </nav>
 
-<main class="container mx-auto mt-28 px-5 py-5 flex justify-center">
+<main class="container mx-auto mt-28 mb-20 px-5 py-5 flex justify-center bg-blue-700">
     <%= yield %>
 </main>
 </body>

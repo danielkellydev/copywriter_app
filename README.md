@@ -1,6 +1,6 @@
 # Copywriter App
 
-Live Site: https://frozen-earth-43053-bda50b3c97b1.herokuapp.com/
+Live Site: https://copywriter-44d6fbdca231.herokuapp.com/
 
 ## Description
 
