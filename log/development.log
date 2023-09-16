@@ -13471,3 +13471,19 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 2731)
 
 
+Started GET "/" for 127.0.0.1 at 2023-09-16 14:50:50 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms | Allocations: 2617)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 14:50:50 +1000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 730)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3671)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 6655)
+Completed 200 OK in 63ms (Views: 37.9ms | ActiveRecord: 10.4ms | Allocations: 14794)
+
+
