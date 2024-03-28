@@ -39,3 +39,4 @@
 
 # Ignore env file
 .env
+/config/credentials/development.key
