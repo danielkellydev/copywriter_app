@@ -14128,3 +14128,78 @@ Processing by CopiesController#index as HTML
 Completed 200 OK in 35ms (Views: 26.7ms | ActiveRecord: 2.1ms | Allocations: 5788)
 
 
+Started GET "/" for 127.0.0.1 at 2024-03-28 14:39:25 +1100
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "copies" WHERE "copies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCopy Load (0.8ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 29.9ms | Allocations: 5957)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 8558)
+Completed 200 OK in 70ms (Views: 32.0ms | ActiveRecord: 15.1ms | Allocations: 14918)
+
+
+Started GET "/copies/new" for 127.0.0.1 at 2024-03-28 14:39:28 +1100
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2717)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 3813)
+Completed 200 OK in 34ms (Views: 28.0ms | ActiveRecord: 0.7ms | Allocations: 5589)
+
+
+Started POST "/copies" for 127.0.0.1 at 2024-03-28 14:40:04 +1100
+Processing by CopiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "copy"=>{"business_name"=>"Home gifts", "industry"=>"Giftware", "target_market"=>"All ages", "copy_location"=>"Social media", "copy_purpose"=>"Share news of new stock", "copy_tone"=>"Exciting, fun"}, "commit"=>"Generate Copy"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 2440)
+
+
+  
+NameError (uninitialized constant CopiesController::CopyGenerationService):
+  
+app/controllers/copies_controller.rb:10:in `create'
+Started GET "/copies/new" for 127.0.0.1 at 2024-03-28 14:41:25 +1100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CopiesController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/new.html.erb within layouts/application
+  Rendered copies/new.html.erb within layouts/application (Duration: 75.7ms | Allocations: 3119)
+  Rendered layout layouts/application.html.erb (Duration: 91.6ms | Allocations: 6395)
+Completed 200 OK in 301ms (Views: 103.0ms | ActiveRecord: 26.9ms | Allocations: 26562)
+
+
+Started POST "/copies" for 127.0.0.1 at 2024-03-28 14:42:10 +1100
+Processing by CopiesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "copy"=>{"business_name"=>"Dan's gifts", "industry"=>"Giftware", "target_market"=>"20-45 years of age", "copy_location"=>"Social media", "copy_purpose"=>"Share news of new stock", "copy_tone"=>"Exciting, fun"}, "commit"=>"Generate Copy"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+OpenAI response: {"id"=>"cmpl-97awVTOtaMcJTGNUAcdXwkIEADc4n", "object"=>"text_completion", "created"=>1711597331, "model"=>"gpt-3.5-turbo-instruct", "choices"=>[{"text"=>"\nWelcome to Dan's Gifts, your one-stop-shop for all things giftware! We cater to the modern gift-giver, targeting individuals between the ages of 20-45. Our products are perfect for any occasion, whether it's a birthday, anniversary, or just because. And now, we're excited to announce our latest stock that's sure to impress. Follow us on social media to stay updated on all the latest and greatest gift options. From quirky and unique to sentimental and heartfelt,", "index"=>0, "logprobs"=>nil, "finish_reason"=>"length"}], "usage"=>{"prompt_tokens"=>83, "completion_tokens"=>100, "total_tokens"=>183}}
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/copies_controller.rb:12:in `create'
+  [1m[36mCopy Create (7.1ms)[0m  [1m[32mINSERT INTO "copies" ("business_name", "industry", "target_market", "content", "user_id", "created_at", "updated_at", "copy_location", "copy_purpose", "copy_tone") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["business_name", "Dan's gifts"], ["industry", "Giftware"], ["target_market", "20-45 years of age"], ["content", "\nWelcome to Dan's Gifts, your one-stop-shop for all things giftware! We cater to the modern gift-giver, targeting individuals between the ages of 20-45. Our products are perfect for any occasion, whether it's a birthday, anniversary, or just because. And now, we're excited to announce our latest stock that's sure to impress. Follow us on social media to stay updated on all the latest and greatest gift options. From quirky and unique to sentimental and heartfelt,"], ["user_id", 1], ["created_at", "2024-03-28 03:42:12.527670"], ["updated_at", "2024-03-28 03:42:12.527670"], ["copy_location", "Social media"], ["copy_purpose", "Share news of new stock"], ["copy_tone", "Exciting, fun"]]
+  ↳ app/controllers/copies_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/copies_controller.rb:12:in `create'
+Redirected to http://127.0.0.1:3000/copies
+Completed 302 Found in 1712ms (ActiveRecord: 19.1ms | Allocations: 10252)
+
+
+Started GET "/copies" for 127.0.0.1 at 2024-03-28 14:42:12 +1100
+Processing by CopiesController#index as TURBO_STREAM
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "copies" WHERE "copies"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCopy Load (1.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered copies/index.html.erb within layouts/application (Duration: 39.3ms | Allocations: 3378)
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 4463)
+Completed 200 OK in 63ms (Views: 44.2ms | ActiveRecord: 5.7ms | Allocations: 6266)
+
+
