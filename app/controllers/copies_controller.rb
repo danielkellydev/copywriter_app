@@ -47,22 +47,19 @@ class CopiesController < ApplicationController
           parameters: {
             prompt: prompt,
             max_tokens: 100,
-            model: 'text-davinci-001',
+            model: 'gpt-3.5-turbo-instruct',
             temperature: 0.5
           }
         )
         
+        Rails.logger.info "OpenAI response: #{response.inspect}"
+        
         return response['choices'][0]['text']
         
       rescue OpenAI::Error => e
-        # Handle the specific error from the OpenAI library here.
-        # You might log the error, show a message to the user, etc.
-        Rails.logger.error "OpenAI Error: #{e.message}"
         return "Error generating content. Please try again later."
         
       rescue StandardError => e
-        # Handle other possible errors.
-        Rails.logger.error "Unknown Error: #{e.message}"
         return "An unexpected error occurred. Please try again later."
         
       end
